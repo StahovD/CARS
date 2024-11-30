@@ -1,0 +1,54 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #4CAF50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.car-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    flex-wrap: wrap; /* Дозволяє елементам переходити на новий рядок, якщо не вміщуються */
+}
+
+.car-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.car-card:hover {
+    transform: scale(1.05); /* Ефект при наведенні */
+}
+
+.car-card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+h2 {
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #4CAF50;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
