@@ -1,0 +1,315 @@
+/* Загальні стилі */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    position: relative;
+}
+
+/* Шапка сайту */
+header {
+    background: #2C3E50; 
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Контейнер для автомобілів */
+.car-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    flex-wrap: wrap; 
+}
+
+.car-card {
+    background: #fff;
+    border: 1px solid #BDC3C7; 
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ефект при наведенні на картки */
+.car-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Зображення автомобіля */
+.car-card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+    height: 200px; 
+}
+
+/* Заголовок автомобіля */
+.car-card h2 {
+    font-size: 1.4rem;
+    color: #333;
+    padding: 10px 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Опис автомобіля */
+.car-card p {
+    font-size: 1rem;
+    color: #555;
+    padding: 0 15px 15px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Ціна автомобіля */
+.car-card .price {
+    font-size: 1.2rem;
+    color: #2C3E50; 
+    font-weight: bold;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/* Стилі для футера */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #2C3E50;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Додавання кнопки для переходу */
+button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #BDC3C7; 
+    color: #2C3E50; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px 0;
+    width: 200px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #AAB7B8; 
+}
+
+/* Підкреслення для заголовків та кнопок */
+h2, h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Додаткові стилі для шрифтів */
+p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body {
+    animation: fadeIn 1.5s ease-in;
+}
+
+.car-container {
+    animation: fadeIn 2s ease-in;
+}
+
+footer {
+    animation: fadeIn 3s ease-in;
+}
+
+
+/* Мобільна версія */
+@media screen and (max-width: 768px) {
+    .car-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .car-card {
+        width: 80%;
+    }
+
+    header {
+        font-size: 1.5rem;
+    }
+}
+
+ /* Контейнер для посилань */
+.link-container {
+    position: absolute;
+    top: 10px;  /* Відстань від верхнього краю */
+    right: 10px;  /* Відстань від правого краю */
+    display: flex;  /* Використовуємо flexbox для горизонтального розташування */
+    gap: 10px;  /* Відступ між посиланнями */
+}
+/* Стилі для вирівнювання посилань у правому верхньому кутку */
+.top-right-link {
+
+    top: 10px; /* Відстань від верхнього краю */
+    right: 10px; /* Відстань від правого краю */
+    margin-left: 10px; /* Відстань між посиланнями */
+    text-decoration: none; /* Видалити підкреслення */
+    color: #000; /* Колір тексту */
+    font-size: 16px; /* Розмір шрифта */
+}
+
+.top-right-link:first-child {
+    margin-left: 0; /* Залишити відстань тільки між посиланнями */
+}
+
+/* Модальне вікно */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+    display: flex; /* Включаємо флексбокс */
+    justify-content: center; /* Горизонтальне центрування */
+    align-items: center; /* Вертикальне центрування */
+    z-index: 1000; /* Високий пріоритет на екранні елементи */
+}
+
+/* Вміст модального вікна */
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideIn 0.3s ease-out; /* Анімація входу */
+}
+
+/* Кнопка закриття модального вікна */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* Стилі для форми */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+input {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 12px;
+    background-color: #4CAF50; /* Зелена кнопка */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Текст з посиланням на реєстрацію */
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.register-link {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+/* Анімація для модального вікна */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    text-align: center; /* Центруємо текст заголовка */
+    font-size: 1.5rem;  /* Можна налаштувати розмір шрифту */
+    color: #333;        /* Колір тексту */
+    margin-bottom: 20px; /* Відступ знизу */
+}
+
+/* Загальні стилі для всіх посилань */
+a {
+    text-decoration: none;  /* Видалити підкреслення */
+    color: white; /* Білий колір для посилань */
+    font-weight: bold; /* Товстий шрифт */
+    padding: 10px 15px; /* Відступи для кращої видимості */
+    display: inline-block; /* Дозволяє додавати відступи */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Плавна зміна кольору */
+}
+
+/* Стилі для навігаційних посилань */
+nav a {
+    margin: 0 10px; /* Відступ між посиланнями */
+}
+
+/* Зміна кольору при наведенні */
+a:hover {
+    color: #2C3E50; /* Темно-синій колір при наведенні */
+    background-color: #BDC3C7; /* Світло-сірий фон при наведенні */
+    border-radius: 5px; /* Заокруглені кути */
+}
