@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна - Продаж та огляд автомобілів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Продаж та огляд автомобілів</h1>
+        <nav>
+            <div class="link-container">
+                <a href="sing.html" class="top-right-link">Увійти</a>
+                <a href="register.html" class="top-right-link">Зареєструватися</a>
+            </div>
+            <a href="index.html">Головна</a>
+            <a href="about.html">Про нас</a>
+            <a href="contact.html">Контакти</a>
+            <a href="#" id="favorites-link">Обране <span id="favorites-count">(0)</span></a>
+        </nav>
+    </header>
+    <main>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Пошук автомобілів..." oninput="searchCars()">
+            <button onclick="searchCars()">Пошук</button>
+            <select id="sortSelect" onchange="sortCars(this.value)">
+                <option value="name-asc">За назвою (А-Я)</option>
+                <option value="name-desc">За назвою (Я-А)</option>
+            </select>
+        </div>
+
+        <div class="car-container" id="carContainer">
+            <div class="car-card" data-car-id="1">
+                <img src="img_cars/911.jpg" alt="Porsche 911">
+                <h2>Porsche 911</h2>
+                <p>Спортивний автомобіль з потужним двигуном та відмінною керованістю.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('1')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$120,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+
+            <div class="car-card" data-car-id="2">
+                <img src="img_cars/bmw.jpg" alt="BMW M5">
+                <h2>BMW M5</h2>
+                <p>Розкішний седан з спортивним характером та преміальним оснащенням.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('2')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$95,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+            
+            <div class="car-card" data-car-id="3">
+                <img src="img_cars/mers.jpg" alt="Mercedes">
+                <h2>Mercedes</h2>
+                <p>Спортивний автомобіль з чудовою динамікою та преміальним оснащенням.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('3')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$85,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+            
+            <div class="car-card" data-car-id="4">
+                <img src="img_cars/corolla.jpg" alt="Toyota Corolla">
+                <h2>Toyota Corolla</h2>
+                <p>Надійний та економічний компактний автомобіль, ідеальний для міста.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('4')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$25,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+            
+            <div class="car-card" data-car-id="5">
+                <img src="img_cars/sivic.jpg" alt="Honda Civic">
+                <h2>Honda Civic</h2>
+                <p>Стильний дизайн та високий рівень паливної ефективності.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('5')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$28,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+            
+            <div class="car-card" data-car-id="6">
+                <img src="img_cars/Ford_Mustang.jpg" alt="Ford Mustang">
+                <h2>Ford Mustang</h2>
+                <p>Ікона американського автопрому, відома своєю потужністю та стилем.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('6')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$45,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+            
+            <div class="car-card" data-car-id="7">
+                <img src="img_cars/Chevrolet_Camaro.jpg" alt="Chevrolet Camaro">
+                <h2>Chevrolet Camaro</h2>
+                <p>Спортивний автомобіль з агресивним дизайном та високою продуктивністю.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('7')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$42,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+            
+            <div class="car-card" data-car-id="8">
+                <img src="img_cars/BMW_3 _Series.jpg" alt="BMW 3 Series">
+                <h2>BMW 3 Series</h2>
+                <p>Преміум седан з комфортом та передовими технологіями.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('8')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$55,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+            
+            <div class="car-card" data-car-id="9">
+                <img src="img_cars/Audi_A4.jpg" alt="Audi A4">
+                <h2>Audi A4</h2>
+                <p>Елегантний дизайн та інноваційні функції для комфортної поїздки.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('9')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$52,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+            
+            <div class="car-card" data-car-id="10">
+                <img src="img_cars/Mercedes-Benz_C-Class.jpg" alt="Mercedes-Benz C-Class">
+                <h2>Mercedes-Benz C-Class</h2>
+                <p>Розкішний інтер'єр та високі стандарти безпеки.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('10')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$58,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+            
+            <div class="car-card" data-car-id="11">
+                <img src="img_cars/Tesla_Model_S.jpg" alt="Tesla Model S">
+                <h2>Tesla Model S</h2>
+                <p>Передовий електромобіль з довгим запасом ходу та швидким прискоренням.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('11')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$95,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+            
+            <div class="car-card" data-car-id="12">
+                <img src="img_cars/Volkswagen_Golf.jpg" alt="Volkswagen Golf">
+                <h2>Volkswagen Golf</h2>
+                <p>Компактний хетчбек з зручним інтер'єром та хорошою керованістю.</p>
+                <button class="favorite-btn" onclick="toggleFavorite('12')">♥</button>
+                <div class="car-details">
+                    <span class="car-price">$32,000</span>
+                    <button class="view-details-btn">Детальніше</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading">
+            <p>Завантаження...</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Продаж та огляд автомобілів</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
